@@ -14,7 +14,7 @@ export default function Student() {
     e.preventDefault();
     const student = { name, address };
     console.log(student);
-    fetch("http://localhost:8080/student/add", {
+    fetch("https://my-student-backend.up.railway.app/student/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(student),
@@ -24,7 +24,7 @@ export default function Student() {
   };
 
   React.useEffect(() => {
-    fetch("http://localhost:8080/student/getAll")
+    fetch("https://my-student-backend.up.railway.app/student/getAll")
       .then((res) => res.json())
       .then((result) => setStudents(result));
   });
